@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELECT Project - Mulungushi University | Energy Efficient Lighting for Zambia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d3b66; /* Dark blue from Mulungushi University */
+            --secondary: #1a936f; /* Green accent */
+            --accent: #f6ae2d; /* Gold accent */
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+        }
+        
+        .navbar {
+            background-color: var(--primary);
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(13, 59, 102, 0.85), rgba(13, 59, 102, 0.9)), 
+                        url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        .section-title {
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .partner-logo {
+            height: 70px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            margin: 1rem 0;
+        }
+        
+        .partner-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .eu-badge {
+            background-color: #003399;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: none;
+        }
+        
+        .counter {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .news-card {
+            border-left: 4px solid var(--accent);
+            height: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            font-weight: 500;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0a2d4d;
+            border-color: #0a2d4d;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            border-top: none;
+        }
+        
+        .table td {
+            border-top: 1px solid #eee;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .counter {
+                font-size: 1.8rem;
+            }
+            
+            .partner-logo {
+                height: 50px;
+            }
+            
+            .gallery-img {
+                height: 150px;
+            }
+            
+            .navbar-brand h4 {
+                font-size: 1.1rem;
+            }
+            
+            .navbar-brand small {
+                font-size: 0.75rem;
+            }
+        }
+        
+        /* Accessibility improvements */
+        a:focus, button:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        /* Loading optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <div class="d-flex align-items-center">
+                    <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                        <i class="fas fa-lightbulb" style="color: var(--primary);"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-0" style="font-weight: 700;">ELECT PROJECT</h5>
+                        <small class="text-light">Mulungushi University, Zambia</small>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#objectives">Objectives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#curriculum">Curriculum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="eu-badge">
+                <i class="fas fa-star me-2"></i>Co-funded by the European Union
+            </div>
+            <h1 class="display-5 fw-bold mb-3">Energy Efficient Lighting for Clean Energy Transitions in Zambia</h1>
+            <p class="lead mb-4">A Mulungushi University-led initiative promoting sustainable lighting solutions and energy education for Zambia's future.</p>
+            <div class="mt-4">
+                <a href="#about" class="btn btn-light btn-lg me-2">Learn More</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">About the Project</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <p class="lead text-primary">The ELECT Project is an international initiative led by Mulungushi University, Zambia, in partnership with Copperbelt University, Aalto University (Finland), and Hellenic Open University (Greece).</p>
+                    <p>The project focuses on developing and promoting energy-efficient lighting solutions to support Zambia's transition to clean energy, while building local capacity through education and innovation at Mulungushi University.</p>
+                    
+                    <h5 class="mt-4 mb-3">Target Beneficiaries:</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>University students & researchers</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Local communities & households</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Energy sector professionals</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Policy makers & government</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4">Project Impact at Mulungushi University</h5>
+                            <div class="row text-center">
+                                <div class="col-6 mb-4">
+                                    <div class="counter" id="studentsCounter">0</div>
+                                    <small class="text-muted">Students Trained</small>
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <div class="counter" id="lightingCounter">0</div>
+                                    <small class="text-muted">Lighting Solutions</small>
+                                </div>
+                                <div class="col-6">
+                                    <div class="counter" id="workshopsCounter">0</div>
+                                    <small class="text-muted">Workshops Held</small>
+                                </div>
+                                <div class="col-6">
+                                    <div class="counter" id="communitiesCounter">0</div>
+                                    <small class="text-muted">Communities Reached</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section id="objectives" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Objectives & Expected Impacts</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-bullseye fa-2x"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Main Objectives</h5>
+                            <ul class="list-unstyled mt-3 text-start">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Develop innovative lighting technologies</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Enhance clean energy curriculum</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Build research capacity</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Promote adoption in communities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-chart-line fa-2x"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Expected Outcomes</h5>
+                            <ul class="list-unstyled mt-3 text-start">
+                                <li class="mb-2"><i class="fas fa-chart-bar text-success me-2"></i>30-40% energy reduction</li>
+                                <li class="mb-2"><i class="fas fa-chart-bar text-success me-2"></i>500+ trained professionals</li>
+                                <li class="mb-2"><i class="fas fa-chart-bar text-success me-2"></i>10+ lighting prototypes</li>
+                                <li><i class="fas fa-chart-bar text-success me-2"></i>Enhanced university curricula</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <div class="rounded-circle bg-warning text-dark d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                    <i class="fas fa-globe-africa fa-2x"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">Long-term Benefits</h5>
+                            <ul class="list-unstyled mt-3 text-start">
+                                <li class="mb-2"><i class="fas fa-leaf text-warning me-2"></i>Contribution to Zambia's energy goals</li>
+                                <li class="mb-2"><i class="fas fa-leaf text-warning me-2"></i>Reduced carbon emissions</li>
+                                <li class="mb-2"><i class="fas fa-leaf text-warning me-2"></i>Lower electricity costs</li>
+                                <li><i class="fas fa-leaf text-warning me-2"></i>Sustainable knowledge transfer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Project Partners</h2>
+            <p class="text-center text-muted mb-5">The ELECT Project brings together leading academic institutions from Zambia and Europe.</p>
+            
+            <div class="row justify-content-center align-items-center">
+                <!-- Mulungushi University - Highlighted -->
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="p-3">
+                        <img src="https://th.bing.com/th/id/R.c6aa341100d3e2ae5073c3e24aedb962?rik=KhPFrAtlfPx0pw&riu=http%3a%2f%2fwww.dkunda.50webs.com%2fMU_logo.JPG&ehk=6sgLSFf2kbZTpUpv2n5UupD967lp4gy5Rz4ffrr7NBk%3d&risl=&pid=ImgRaw&r=0" 
+                             alt="Mulungushi University" class="partner-logo img-fluid">
+                        <h6 class="mt-3 fw-bold text-primary">Mulungushi University</h6>
+                        <small class="text-muted">Zambia (Lead Partner)</small>
+                    </div>
+                </div>
+                
+                <!-- Copperbelt University -->
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="p-3">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.aObvxPLdeqM_YvFXGNH95wHaHk?rs=1&pid=ImgDetMain&o=7&rm=3" 
+                             alt="Copperbelt University" class="partner-logo img-fluid">
+                        <h6 class="mt-3 fw-bold">Copperbelt University</h6>
+                        <small class="text-muted">Zambia</small>
+                    </div>
+                </div>
+                
+                <!-- Aalto University -->
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="p-3">
+                        <img src="https://i.pinimg.com/originals/ee/27/3b/ee273b8260065c55e7280e48172e5ef9.jpg" 
+                             alt="Aalto University" class="partner-logo img-fluid">
+                        <h6 class="mt-3 fw-bold">Aalto University</h6>
+                        <small class="text-muted">Finland</small>
+                    </div>
+                </div>
+                
+                <!-- Hellenic Open University -->
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="p-3">
+                        <img src="https://studyingreece.edu.gr/wp-content/uploads/2024/06/hou-logo-new-1024x784.png" 
+                             alt="Hellenic Open University" class="partner-logo img-fluid" style="height: 80px;">
+                        <h6 class="mt-3 fw-bold">Hellenic Open University</h6>
+                        <small class="text-muted">Greece</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EU Funding Highlight -->
+            <div class="mt-5 p-4 text-center" style="background: #f8f9fa; border-radius: 8px; border-left: 4px solid #003399;">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <i class="fas fa-star fa-2x" style="color: #003399;"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="text-primary">Co-funded by the European Union</h5>
+                        <p class="mb-0 small">This project receives funding from the European Union, supporting international cooperation and sustainable development in Zambia.</p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/200px-Flag_of_Europe.svg.png" 
+                             alt="European Union" style="height: 50px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events Section -->
+    <section id="news" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Latest News & Events</h2>
+            
+            <div class="row" id="newsContainer">
+                <!-- News loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Training Programme at Mulungushi University</h2>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Energy Efficient Lighting Curriculum</h5>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-bold" style="width: 30%;">Target Group</td>
+                                            <td>University students, technicians, energy professionals in Zambia</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">Duration</td>
+                                            <td>6 months (theoretical + practical sessions)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">Delivery Format</td>
+                                            <td>
+                                                <span class="badge bg-primary me-1">Blended Learning</span>
+                                                <span class="badge bg-success me-1">Workshops</span>
+                                                <span class="badge bg-warning">Field Visits</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">Learning Outcomes</td>
+                                            <td>
+                                                <ul class="mb-0">
+                                                    <li>Understand energy-efficient lighting principles</li>
+                                                    <li>Design lighting systems for Zambian context</li>
+                                                    <li>Conduct energy audits and assessments</li>
+                                                    <li>Develop business models for lighting solutions</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">Application Process</td>
+                                            <td>
+                                                <ol class="mb-3">
+                                                    <li>Submit online application form</li>
+                                                    <li>Provide academic/professional credentials</li>
+                                                    <li>Attend interview at Mulungushi University</li>
+                                                    <li>Receive admission notification</li>
+                                                </ol>
+                                                <button class="btn btn-primary" onclick="showApplicationAlert()">Apply Now</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">Upcoming Workshops</h5>
+                            <div id="eventsList">
+                                <!-- Events loaded via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">Training Locations</h5>
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-university text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Mulungushi University</h6>
+                                    <small class="text-muted">Main Campus, Kabwe</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-university text-success me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Copperbelt University</h6>
+                                    <small class="text-muted">Kitwe Campus</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-laptop text-warning me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Online Platform</h6>
+                                    <small class="text-muted">Virtual Learning</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Project Gallery</h2>
+            
+            <div class="row g-3" id="galleryContainer">
+                <!-- Gallery images loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Contact Us</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Project Coordinator at Mulungushi University</h5>
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-user-tie text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Dr. Sarah Mwale</h6>
+                                    <p class="mb-1 text-muted">Project Coordinator</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-university text-primary me-3 mt-1"></i>
+                                <div>
+                                    <p class="mb-0">Mulungushi University</p>
+                                    <small class="text-muted">Great North Road, Kabwe, Zambia</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-envelope text-primary me-3 mt-1"></i>
+                                <div>
+                                    <p class="mb-0">elect.project@mulungushi.edu.zm</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-phone text-primary me-3 mt-1"></i>
+                                <div>
+                                    <p class="mb-0">+260 211 123 4567</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Send us a Message</h5>
+                            <div id="formMessage" class="alert alert-success d-none" role="alert">
+                                Thank you for your message! We will get back to you soon.
+                            </div>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                                    <div class="invalid-feedback" id="nameError"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" placeholder="your.email@example.com" required>
+                                    <div class="invalid-feedback" id="emailError"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Subject</label>
+                                    <select class="form-select" id="subject">
+                                        <option value="">Select a subject</option>
+                                        <option value="admission">Admission Inquiry</option>
+                                        <option value="workshop">Workshop Registration</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="general">General Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Your Message *</label>
+                                    <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..." required></textarea>
+                                    <div class="invalid-feedback" id="messageError"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                            <i class="fas fa-lightbulb" style="color: var(--primary);"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0">ELECT PROJECT</h5>
+                            <small class="text-light">Mulungushi University Initiative</small>
+                        </div>
+                    </div>
+                    <p class="mb-3">Energy Efficient Lighting for Clean Energy Transitions in Zambia</p>
+                    <div class="eu-badge">
+                        <i class="fas fa-star me-2"></i>Co-funded by the European Union
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#home" class="text-light text-decoration-none">Home</a></li>
+                                <li class="mb-2"><a href="#about" class="text-light text-decoration-none">About</a></li>
+                                <li class="mb-2"><a href="#objectives" class="text-light text-decoration-none">Objectives</a></li>
+                                <li><a href="#partners" class="text-light text-decoration-none">Partners</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#curriculum" class="text-light text-decoration-none">Curriculum</a></li>
+                                <li class="mb-2"><a href="#gallery" class="text-light text-decoration-none">Gallery</a></li>
+                                <li class="mb-2"><a href="#news" class="text-light text-decoration-none">News</a></li>
+                                <li><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Contact Information</h5>
+                    <p class="mb-2">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        Mulungushi University<br>
+                        <span class="ms-4">Great North Road, Kabwe, Zambia</span>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-envelope me-2"></i>
+                        elect.project@mulungushi.edu.zm
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-phone me-2"></i>
+                        +260 211 123 4567
+                    </p>
+                </div>
+            </div>
+            
+            <hr class="bg-secondary my-4">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0"><small>© 2024 ELECT Project, Mulungushi University. All rights reserved.</small></p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0"><small>This website was created for the Mulungushi University Hackathon.</small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animated counters
+        function animateCounter(elementId, finalValue, duration = 2000) {
+            let element = document.getElementById(elementId);
+            let start = 0;
+            let increment = finalValue / (duration / 16);
+            let current = 0;
+            
+            function updateCounter() {
+                current += increment;
+                if (current < finalValue) {
+                    element.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = finalValue;
+                }
+            }
+            updateCounter();
+        }
+
+        // Initialize counters when section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('studentsCounter', 547);
+                    animateCounter('lightingCounter', 23);
+                    animateCounter('workshopsCounter', 36);
+                    animateCounter('communitiesCounter', 58);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Form validation
+        function validateForm() {
+            let isValid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            
+            // Reset errors
+            [name, email, message].forEach(field => {
+                field.classList.remove('is-invalid');
+            });
+            
+            // Validate name
+            if (!name.value.trim()) {
+                document.getElementById('nameError').textContent = 'Name is required';
+                name.classList.add('is-invalid');
+                isValid = false;
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim()) {
+                document.getElementById('emailError').textContent = 'Email is required';
+                email.classList.add('is-invalid');
+                isValid = false;
+            } else if (!emailRegex.test(email.value)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email';
+                email.classList.add('is-invalid');
+                isValid = false;
+            }
+            
+            // Validate message
+            if (!message.value.trim()) {
+                document.getElementById('messageError').textContent = 'Message is required';
+                message.classList.add('is-invalid');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        // Show application alert
+        function showApplicationAlert() {
+            alert('Application for the 2024 intake is now open! Please send your application to elect.project@mulungushi.edu.zm or visit the Mulungushi University admissions office.');
+        }
+
+        // Save form data
+        function saveFormData(formData) {
+            // Simulate saving data
+            let submissions = JSON.parse(localStorage.getItem('electFormSubmissions') || '[]');
+            submissions.push(formData);
+            localStorage.setItem('electFormSubmissions', JSON.stringify(submissions));
+            return true;
+        }
+
+        // Zambian news
+        const zambianNews = [
+            { 
+                title: "Mulungushi University Hosts Energy Conference", 
+                date: "2024-03-20", 
+                content: "Mulungushi University will host the 3rd National Conference on Sustainable Energy, bringing experts from across Zambia.",
+                category: "event"
+            },
+            { 
+                title: "Project Expands to Rural Zambia", 
+                date: "2024-03-15", 
+                content: "The ELECT Project launches new initiatives in Eastern Province, bringing solar lighting to remote communities.",
+                category: "news"
+            },
+            { 
+                title: "Student Innovation Winners", 
+                date: "2024-03-10", 
+                content: "Mulungushi University students win prizes for designing affordable solar-powered lighting solutions.",
+                category: "achievement"
+            }
+        ];
+
+        // Zambian events
+        const zambianEvents = [
+            { 
+                title: "Solar Lighting Workshop", 
+                date: "April 15-17, 2024", 
+                location: "Mulungushi University, Kabwe"
+            },
+            { 
+                title: "Energy Audit Training", 
+                date: "May 8-10, 2024", 
+                location: "Copperbelt University, Kitwe"
+            },
+            { 
+                title: "Community Outreach", 
+                date: "May 25, 2024", 
+                location: "Chongwe District"
+            }
+        ];
+
+        // Zambian gallery images
+        const zambianGallery = [
+            { 
+                url: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", 
+                title: "Project Team Meeting"
+            },
+            { 
+                url: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80", 
+                title: "Solar Installation Training"
+            },
+            { 
+                url: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80", 
+                title: "University Workshop"
+            },
+            { 
+                url: "https://tse4.mm.bing.net/th/id/OIP.2kBlpFULz_Vp9TBafw9HugHaE8?rs=1&pid=ImgDetMain&o=7&rm=3", 
+                title: "Mulungushi University Campus"
+            },
+            { 
+                url: "https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80", 
+                title: "Community Engagement"
+            },
+            { 
+                url: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80", 
+                title: "Technical Training"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observe the about section for counters
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) observer.observe(aboutSection);
+
+            // Load news
+            const newsContainer = document.getElementById('newsContainer');
+            zambianNews.forEach(news => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4 mb-4';
+                
+                let badgeClass = 'bg-primary';
+                if (news.category === 'event') badgeClass = 'bg-success';
+                if (news.category === 'achievement') badgeClass = 'bg-warning';
+                
+                col.innerHTML = `
+                    <div class="card news-card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <span class="badge ${badgeClass}">${news.category.toUpperCase()}</span>
+                                <small class="text-muted">${news.date}</small>
+                            </div>
+                            <h5 class="card-title">${news.title}</h5>
+                            <p class="card-text">${news.content}</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+                        </div>
+                    </div>
+                `;
+                newsContainer.appendChild(col);
+            });
+
+            // Load events
+            const eventsList = document.getElementById('eventsList');
+            zambianEvents.forEach(event => {
+                const eventDiv = document.createElement('div');
+                eventDiv.className = 'mb-3 p-3 border-start border-primary';
+                eventDiv.innerHTML = `
+                    <h6 class="mb-1">${event.title}</h6>
+                    <p class="mb-1 small text-muted"><i class="fas fa-calendar me-1"></i>${event.date}</p>
+                    <p class="mb-0 small text-muted"><i class="fas fa-map-marker-alt me-1"></i>${event.location}</p>
+                `;
+                eventsList.appendChild(eventDiv);
+            });
+
+            // Load gallery
+            const galleryContainer = document.getElementById('galleryContainer');
+            zambianGallery.forEach(img => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4 col-6';
+                col.innerHTML = `
+                    <div class="card border-0">
+                        <img src="${img.url}" class="gallery-img" alt="${img.title}">
+                        <div class="card-body p-2">
+                            <small class="text-muted">${img.title}</small>
+                        </div>
+                    </div>
+                `;
+                galleryContainer.appendChild(col);
+            });
+
+            // Contact form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!validateForm()) {
+                    return;
+                }
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Save form data
+                saveFormData(formData);
+                
+                // Show success message
+                const formMessage = document.getElementById('formMessage');
+                formMessage.classList.remove('d-none');
+                
+                // Reset form
+                this.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('d-none');
+                }, 5000);
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu collapse after click
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse.classList.contains('show')) {
+                        new bootstrap.Collapse(navbarCollapse).toggle();
+                    }
+                });
+            });
+
+            // Update active nav on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPos = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        document.querySelectorAll('.navbar-nav a').forEach(link => {
+                            link.classList.remove('active');
+                            if(link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
